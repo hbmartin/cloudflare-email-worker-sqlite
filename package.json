@@ -1,25 +1,24 @@
 {
-	"name": "email-worker",
-	"type": "module",
-	"version": "1.0.0",
+  "name": "email-worker",
+  "type": "module",
+  "version": "1.0.0",
   "private": true,
   "main": "src/index.ts",
   "scripts": {
-		"deploy": "wrangler publish src/index.ts",
-		"dev": "wrangler dev src/index.ts --local",
-		"test": "vitest --coverage"
-	},
-	"dependencies": {
-		"letterparser": "^0.0.10",
-		"util": "^0.12.5"
-	},
-	"devDependencies": {
-		"@cloudflare/workers-types": "^4.20230221.0",
-		"@types/jest": "^29.4.0",
-		"@vitest/coverage-c8": "^0.31.0",
-		"prettier": "^2.8.4",
-		"typescript": "^4.9.5",
-		"vitest": "^0.31.0",
-		"vitest-environment-miniflare": "^2.12.1"
-	}
+    "deploy": "wrangler publish src/index.ts",
+    "dev": "wrangler dev src/index.ts --local",
+    "test": "vitest --coverage"
+  },
+  "dependencies": {
+    "postal-mime": "^2.3.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "@types/jest": "^29.4.0",
+    "@vitest/coverage-c8": "^0.31.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5",
+    "vitest": "^0.31.0",
+    "vitest-environment-miniflare": "^2.12.1"
+  }
 }
