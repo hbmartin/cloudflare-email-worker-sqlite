@@ -2,7 +2,11 @@ import { extract as parseRawEmail } from 'letterparser';
 
 export async function email(message: any, env: any, ctx?: any): Promise<void> {
   const url = env.DISCORD_WEBHOOK_URL;
-  const MAX_LEN = env.MAX_LEN || 524288; // 512KB
+  const DEFAULT_MAX_LENGTH = 524288; // 512KB
+  const maxLenFromEnv = parseInt(env.MAX_LEN);
+  const MAX_LEN: number = !isNaN(maxLenFromEnv) && maxLenFromEnv > 0 
+    ? maxLenFromEnv 
+    : DEFAULT_MAX_LENGTH;
   if (!url) throw new Error('Missing DISCORD_WEBHOOK_URL');
 
   // Parse email
