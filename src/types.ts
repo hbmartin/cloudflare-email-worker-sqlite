@@ -1,1 +1,3 @@
-export interface Env {}
+export interface Env {
+  MAX_LEN?: string;
+}
