@@ -2,8 +2,9 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hbmartin/email-worker/blob/main/LICENSE)
 [![Checked with Biome](https://img.shields.io/badge/Checked_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev)
+[![Lint and Test](https://github.com/hbmartin/email-worker/actions/workflows/main.yaml/badge.svg)](https://github.com/hbmartin/email-worker/actions/workflows/main.yaml)
 
-Send emails to Cloudflare and forward them to different channels using an email worker.
+Send emails to Cloudflare and store them in SQLite (D1).
 
 
 
