@@ -1,5 +1,6 @@
-# Email worker &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/webbertakken/email-worker/blob/main/LICENSE) [![codecov](https://codecov.io/gh/webbertakken/email-worker/branch/main/graph/badge.svg?token=vWf0M5qX20)](https://codecov.io/gh/webbertakken/email-worker) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/webbertakken/email-worker/blob/main/CONTRIBUTING.md)
+# Cloudflare email worker to SQLite D1
 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hbmartin/email-worker/blob/main/LICENSE)
 [![Checked with Biome](https://img.shields.io/badge/Checked_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev)
 
 Send emails to Cloudflare and forward them to different channels using an email worker.
@@ -25,23 +26,6 @@ yarn install
 wrangler publish
 ```
 
-#### Set up a webhook
-
-- Right-click on a Discord channel then click `Edit Channel`, then `Integrations`.
-- Create a webhook, then copy the URL.
-- Add this url to your secrets:
-
-```bash
-wrangler secret put DISCORD_WEBHOOK_URL
-```
-
-You should see something like this
-
-```console
-🌀 Creating the secret for the Worker "email-worker"
-✨ Success! Uploaded secret DISCORD_WEBHOOK_URL
-```
-
 #### Set up a route
 
 - Go to your [zone's Email Workers settings](https://dash.cloudflare.com/?to=/:account).
@@ -63,7 +47,3 @@ You should see something like this
 ## License
 
 This package is [MIT](./LICENSE) licensed.
-
-#### Sub licenses
-
-- [`mat-sz/letterparser`](https://github.com/mat-sz/letterparser): [BSD-3 Clause Clear](https://github.com/mat-sz/letterparser/blob/master/LICENSE)
