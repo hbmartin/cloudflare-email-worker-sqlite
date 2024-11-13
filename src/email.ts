@@ -18,7 +18,7 @@ export async function email(
     "INSERT INTO emails (sender, recipient, subject, body) VALUES (?, ?, ?, ?);",
   )
     .bind(from, to, subject, body)
-    .all();
+    .run();
   // biome-ignore lint/suspicious/noConsoleLog: testing
   console.log(
     JSON.stringify({

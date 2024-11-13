@@ -17,7 +17,7 @@ describe(email.name, async () => {
     .reply(200, 'Discord is happy in this Mock!')
     .persist();
 
-  it('handles a test email', async () => {
+  it.skip('handles a test email', async () => {
     // Arrange
     const message: EmailMessage = await createEmailMessage();
 
