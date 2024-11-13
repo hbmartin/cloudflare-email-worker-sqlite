@@ -14,6 +14,11 @@ export async function email(
   const email = await PostalMime.parse(message.raw);
   const subject = email.subject;
   const body = email.text?.substring(0, maxLen);
+  const result = await env.DB.prepare(
+    "INSERT INTO emails (sender, recipient, subject, body) VALUES (?, ?, ?, ?);",
+  )
+    .bind(from, to, subject, body)
+    .all();
   // biome-ignore lint/suspicious/noConsoleLog: testing
   console.log(
     JSON.stringify({
@@ -24,6 +29,7 @@ export async function email(
       subject,
       bodyLength: body?.length ?? 0,
       timestamp: new Date().toISOString(),
+      result: result,
     }),
   );
 }

@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@cloudflare/workers-types": "^4.20241022.0",
+    "@cloudflare/workers-types": "^4.20241112.0",
     "@types/jest": "^29.5.12",
     "@vitest/coverage-v8": "^0.34.6",
     "miniflare": "^2",

@@ -21,6 +21,10 @@ Send emails to Cloudflare and store them in SQLite (D1).
 yarn install
 ```
 
+#### Setup database
+- Setup a [D1 database](https://developers.cloudflare.com/d1/get-started/)
+- Export the environment variables `CF_EMAIL_DB_ID` and `CF_EMAIL_DB_NAME` with the database ID and name from previous step.
+
 #### Deploy the worker
 
 ```bash
@@ -39,10 +43,6 @@ wrangler publish
 
 - Send an email to the email address you registered.
 - Check the channel you registered the webhook to.
-
-## Tips
-
-- Change the `name` field in `wrangler.toml` to deploy a separate worker with a separate secret (e.g. with a separate webhook for a test channel). 
 
 
 ## License
