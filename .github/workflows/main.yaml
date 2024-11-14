@@ -26,12 +26,12 @@ jobs:
         run: biome ci src
       - name: Tests
         run: yarn vitest run --coverage
-
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-
+      - name: Configure wrangler.toml from env vars
+        run: ./substitute_vars.sh wrangler.toml
       - name: Publish
         uses: cloudflare/wrangler-action@v3
         with:
