@@ -32,6 +32,9 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Configure wrangler.toml from env vars
         run: ./substitute_vars.sh wrangler.toml
+        env:
+          CF_EMAIL_DB_NAME: ${{ vars.CF_EMAIL_DB_NAME }}
+          CF_EMAIL_DB_ID: ${{ vars.CF_EMAIL_DB_ID }}
       - name: Publish
         uses: cloudflare/wrangler-action@v3
         with:
