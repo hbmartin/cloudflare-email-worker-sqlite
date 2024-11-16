@@ -10,3 +10,7 @@ head_sampling_rate = 1
 binding = "DB"
 database_name = "$CF_EMAIL_DB_NAME"
 database_id = "$CF_EMAIL_DB_ID"
+
+[vars]
+PUSHOVER_APP_API_TOKEN = "$PUSHOVER_APP_API_TOKEN"
+PUSHOVER_USER_KEY = "$PUSHOVER_USER_KEY"
