@@ -35,6 +35,8 @@ jobs:
         env:
           CF_EMAIL_DB_NAME: ${{ vars.CF_EMAIL_DB_NAME }}
           CF_EMAIL_DB_ID: ${{ vars.CF_EMAIL_DB_ID }}
+          PUSHOVER_APP_API_TOKEN: ${{ vars.PUSHOVER_APP_API_TOKEN }}
+          PUSHOVER_USER_KEY: ${{ vars.PUSHOVER_USER_KEY }}
       - name: Publish
         uses: cloudflare/wrangler-action@v3
         with:

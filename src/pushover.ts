@@ -3,15 +3,15 @@ export async function sendPushoverNotification(
   message: string,
   token?: string,
   user?: string,
-): Promise<void> {
+): Promise<number> {
   if (!token || token.startsWith("$") || !user || user.startsWith("$")) {
-    return;
+    return -2;
   }
   const formData = new FormData();
   formData.append("token", token);
   formData.append("user", user);
-  formData.append("title", title);
-  formData.append("message", message);
+  formData.append("title", title.substring(0, 250));
+  formData.append("message", message.substring(0, 1024));
 
   try {
     const response = await fetch("https://api.pushover.net/1/messages.json", {
@@ -19,10 +19,9 @@ export async function sendPushoverNotification(
       body: formData,
     });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+    return response.status;
   } catch (error) {
     console.error("Error sending notification:", error);
+    return -1;
   }
 }

@@ -33,7 +33,7 @@ export async function email(
       result: result,
     }),
   );
-  sendPushoverNotification(
+  await sendPushoverNotification(
     `Email processed: ${subject}`,
     `From: ${from}\nTo: ${to}\nBody: ${body}`,
     env.PUSHOVER_APP_API_TOKEN,
