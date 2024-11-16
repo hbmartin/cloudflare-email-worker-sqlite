@@ -1,6 +1,7 @@
 import type { ForwardableEmailMessage } from "@cloudflare/workers-types";
 import PostalMime from "postal-mime";
 import type { Env } from "./types";
+import { sendPushoverNotification } from "./pushover";
 
 export async function email(
   message: ForwardableEmailMessage,
@@ -31,5 +32,11 @@ export async function email(
       timestamp: new Date().toISOString(),
       result: result,
     }),
+  );
+  sendPushoverNotification(
+    `Email processed: ${subject}`,
+    `From: ${from}\nTo: ${to}\nBody: ${body}`,
+    env.PUSHOVER_APP_API_TOKEN,
+    env.PUSHOVER_USER_KEY,
   );
 }
