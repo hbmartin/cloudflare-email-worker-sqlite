@@ -1,7 +1,7 @@
 import type { ForwardableEmailMessage } from "@cloudflare/workers-types";
 import PostalMime from "postal-mime";
-import type { Env } from "./types";
 import { sendPushoverNotification } from "./pushover";
+import type { Env } from "./types";
 
 export async function email(
   message: ForwardableEmailMessage,
